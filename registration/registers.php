@@ -1,16 +1,16 @@
-<?php include('server.php') ?>
+<?php include('servers.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faculty Signup!</title>
- <link rel="stylesheet" type="text/css" href="style.css"> 
+  <title>Student Signup!</title>
+  <link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
 <body>
   <div class="header">
-  	<h2>Faculty Register</h2>
+  	<h2>Student Register</h2>
   </div>
 	
-  <form method="post" action="register.php">
+  <form method="post" action="registers.php">
   	<?php include('errors.php'); ?>
         <div class="input-group">
   	  <label>Name</label>
@@ -29,8 +29,12 @@
   	  <input type="email" name="email" value="<?php echo $email; ?>">
   	</div>
         <div class="input-group">
-  	  <label>Subject</label>
-  	  <input type="text" name="subject" value="<?php echo $subject; ?>">
+  	  <label>Course</label>
+  	  <input type="text" name="course" value="<?php echo $course; ?>">
+  	</div>
+        <div class="input-group">
+  	  <label>Section</label>
+  	  <input type="text" name="section" value="<?php echo $section; ?>">
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
@@ -44,7 +48,7 @@
   	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
   	<p>
-  		Already a member? <a href="login.php">Sign in</a>
+  		Already a member? <a href="logins.php">Sign in</a>
   	</p>
   </form>
 </body>

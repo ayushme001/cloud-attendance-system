@@ -1,16 +1,16 @@
-<?php include('server.php') ?>
+<?php include('servers.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Factuly login</title>
+  <title>Student login</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="header">
-  	<h2>Faculty Login</h2>
+  	<h2>Student Login</h2>
   </div>
 	 
-  <form method="post" action="login.php">
+  <form method="post" action="logins.php">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   		<label>Username</label>
@@ -24,10 +24,10 @@
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
   	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
+  		Not yet a member? <a href="registers.php">Sign up</a>
   	</p>
         <div class="input-group">
-  		<button type="button" class="btn" onclick="window.location.href='index.html'" >Login as student</button>
+  		<button type="button" class="btn" onclick="window.location.href='index.html'" >Login as faculty</button>
   	</div>
         
   </form>

@@ -6,7 +6,8 @@ $username = "";
 $email    = "";
 $id    = "";
 $name   = "";
-$subject   = "";
+$course   = "";
+$section   = "";
 $errors = array(); 
  
 
@@ -20,7 +21,8 @@ if (isset($_POST['reg_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $id = mysqli_real_escape_string($db, $_POST['id']);
   $name = mysqli_real_escape_string($db, $_POST['name']);
-  $subject=  mysqli_real_escape_string($db, $_POST['subject']);
+  $course=  mysqli_real_escape_string($db, $_POST['course']);
+  $section=  mysqli_real_escape_string($db, $_POST['section']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
@@ -30,7 +32,8 @@ if (isset($_POST['reg_user'])) {
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($id)) { array_push($errors, "ID is required"); }
   if (empty($name)) { array_push($errors, "Name is required"); }
-  if (empty($subject)) { array_push($errors, "Subject is required"); }
+  if (empty($section)) { array_push($errors, "section is required"); }
+  if (empty($course)) { array_push($errors, "course is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
@@ -38,7 +41,7 @@ if (isset($_POST['reg_user'])) {
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM teacher_database WHERE username='$username' OR email='$email' LIMIT 1";
+  $user_check_query = "SELECT * FROM student_database WHERE username='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
@@ -60,12 +63,12 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO teacher_database (id, name, username, email, subject, password) 
-  			  VALUES('$id', '$name', '$username', '$email', '$subject', '$password')";
+  	$query = "INSERT INTO student_database (id, name, username, email, course, section, password) 
+  			  VALUES('$id', '$name', '$username', '$email', '$course', '$section', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index1.php');
+  	header('location: index2.php');
   }
 }
 
@@ -83,12 +86,12 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$password = md5($password);
-  	$query = "SELECT * FROM teacher_database WHERE username='$username' AND password='$password'";
+  	$query = "SELECT * FROM student_database WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index1.php');
+  	  header('location: index2.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}
