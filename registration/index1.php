@@ -160,56 +160,67 @@
 
 
     <?php
-     
-     
+    
+    $id    = "";
+    $name   = "";
+    $attn="";
     mysqli_select_db($db,'registration'); 
-        $sql = "SELECT name FROM student_database ";
+        $sql = "SELECT * FROM student_database ";
         $retval = mysqli_query($db , $sql );
         if(! $retval )
         {
             die('Could not get data: ' . mysqli_error());
          }
-         $c=1;
-       
+         
+         echo"<form method='post' name='attendance' class='input-group'  action='index1.php'>";
     echo"<table class='data-table' width='100%' border='0' cellpadding='0' cellspacing='1' >
             <tbody>";
                 
+         $c=1;       
         while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) 
         {
-           
             echo"<p>";
             echo"<tr>";
-            echo"<td  height='50' class='data-table'>$c</td>" ;         
-            echo "<td  height='50' class='data-table'>{$row['name']}</td>" ;
-            echo"<form name = 'attn'>";
+            echo"<td  height='50' name='id' class='data-table' value=''>{$row['id']}</td>" ;         
+            echo "<td  height='50' name='name' class='data-table' value=''>{$row['name']}</td>" ;
+        
+            
+            
             echo"<td height='50' >";
             echo "<label class='container'>
-                    <input type='radio' name='PRESENT' value='P' >
+                    <input type='radio' name = '$c' value='P' >
                             PRESENT
                          <span class='checkmark'></span>
                   </label>" ;
             echo "<label class='container' >
-                    <input type='radio' name='ABSENT' value='A'  >
+                    <input type='radio' name = '$c' value='A'  >
                                 ABSENT
                          <span class='checkmark'></span>
                   </label>" ;
+            if (isset($_POST[$c])) {
+                $attnd=$_POST[$c];
+                $id1=$row['id'];
+                $name1=$row['name'];
+                $fill="UPDATE `attendance_teacher` SET `$date` = '$attnd' WHERE `attendance_teacher`.`id` = '$id1';";                                          
+                mysqli_query($db,$fill);
+                
+            }
              echo"</td>";
-             echo"</form>";
              echo"</tr>";
              echo"</p>";
-             echo"<br/>";
-               
-            $c++;
+             echo"<br/>";           
+            
+             $c++;
         }
         
-        
         echo"</tbody>";
-    echo"</table>";
-     echo"<input type = 'button' class='btn2' value = 'SUBMIT' onClick = 'valthisform();'>";  
-            
+     echo"</table>";
+     echo"<button type='submit' class='btn' >Submit</button> ";
+     echo"</form>";
+
     ?>
 <p> <a href="index2.php?logout='1'" style="color: red;">logout</a> </p>
-       
+   
 </div>		
 </body>
 </html>
