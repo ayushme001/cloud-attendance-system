@@ -143,7 +143,7 @@
         echo "subject :{$row['subject']}  <br> " ;
    }
     ?>
-      <br>  
+      <br/>
       <tr>
                 <td>
                     <table width='100%' border='0' cellpadding='0' cellspacing='0' class="data-table">
@@ -165,21 +165,21 @@
     $name   = "";
     $attn="";
     mysqli_select_db($db,'registration'); 
-        $sql = "SELECT * FROM student_database ";
+        $sql = "SELECT * FROM student_database ORDER BY id ASC ";
         $retval = mysqli_query($db , $sql );
         if(! $retval )
         {
             die('Could not get data: ' . mysqli_error());
          }
          
-         echo"<form method='post' name='attendance' class='input-group'  action='index1.php'>";
+    echo"<form method='post'  class='input-group' action='index1.php'>";
     echo"<table class='data-table' width='100%' border='0' cellpadding='0' cellspacing='1' >
             <tbody>";
                 
          $c=1;       
         while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) 
         {
-            echo"<p>";
+            
             echo"<tr>";
             echo"<td  height='50' name='id' class='data-table' value=''>{$row['id']}</td>" ;         
             echo "<td  height='50' name='name' class='data-table' value=''>{$row['name']}</td>" ;
@@ -201,14 +201,17 @@
                 $attnd=$_POST[$c];
                 $id1=$row['id'];
                 $name1=$row['name'];
-                $fill="UPDATE `attendance_teacher` SET `$date` = '$attnd' WHERE `attendance_teacher`.`id` = '$id1';";                                          
-                mysqli_query($db,$fill);
+                
+                //$sub="INSERT INTO `$subject` (`subject`, `id`, `name`, `$date`) VALUES ('$subject', '$id1', '$name1', '$attnd');";
+                
+                $sub="UPDATE `$subject` SET `$date` = '$attnd' WHERE `$subject`.`id` = '$id1';";                                          
+                //mysqli_query($db,$fill);
+                mysqli_query($db,$sub);
                 
             }
              echo"</td>";
              echo"</tr>";
-             echo"</p>";
-             echo"<br/>";           
+                      
             
              $c++;
         }
@@ -219,6 +222,10 @@
      echo"</form>";
 
     ?>
+    
+    
+    
+    
 <p> <a href="index2.php?logout='1'" style="color: red;">logout</a> </p>
    
 </div>		

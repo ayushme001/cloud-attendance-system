@@ -13,7 +13,7 @@ body {
   color: white;
   background: #5F9EA0;
   text-align: center;
-  border: 1px solid #B0C4DE;
+  border: 0px solid #B0C4DE;
   border-bottom: none;
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
@@ -23,7 +23,7 @@ form, .content {
   height: auto;
   margin: 0px auto;
   padding: 20px;
-  border: 1px solid #B0C4DE;
+  border: 0px solid #B0C4DE;
   background: white;
   border-radius: 0px 0px 10px 10px;
 }
@@ -48,7 +48,7 @@ form, .content {
   height: 30px;
   width: 93%;
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
   border: 1px solid gray;
 }
@@ -194,7 +194,7 @@ form, .content {
 }
 
 body {
-			font-size: 15px;
+			font-size: 20px;
 			color: #343d44;
 			font-family: "segoe-ui", "open-sans", tahoma, arial;
 			padding: 0;
@@ -227,7 +227,7 @@ body {
 		.data-table th, 
 		.data-table td {
 			border: 1px solid #e1edff;
-			padding: 7px 17px;
+			padding: 7px 43px;
 		}
 		.data-table caption {
 			margin: 7px;
