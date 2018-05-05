@@ -65,8 +65,8 @@
                     <table width='100%' border='0' cellpadding='0' cellspacing='0' class="data-table">
                         <tbody>
                             <tr>
-                                <th   class='data-table'> Subjects/Date </th>
-                                <th   class='data-table'>CBNST </th>
+                                <th  class='data-table'> Subjects/Date </th>
+                                <th  class='data-table'>CBNST </th>
                                 <th  class='data-table'>Automata</th>
                                 <th  class='data-table'>Microprocessors</th>
                                 <th  class='data-table'>Computer Organization</th>
@@ -81,31 +81,16 @@
         
         $db = mysqli_connect('localhost', 'root', '');
         mysqli_select_db($db,'registration'); 
-        
+       
          // Start date
 	//$date = '2009-12-06';
 	// End date
-	$end_date = '07/05/2018';
-        $date1 = date('d/m/Y'); 
+	$end_date = date('d/m/Y');
+        $date1 = '01/05/2018'; 
         $i=0;
         for($i=1;$i<=$end_date;$i++)
 	 {  
-            /*
-            if($i=1)
-            {$subject="cbnst";}
-            if($i=2)
-            {$subject="automata";}
-            if($i=3)
-            {  $subject="micro";}
-            if($i=4)
-            { $subject="co";}
-            if($i=5)
-            { $subject="java";}
-            if($i=6)
-            { $subject="cc";}
-             * 
             
-             */
                 if($date1!=$end_date+1)
                 {
                 

@@ -21,16 +21,12 @@
   	  <input type="text" name="username" value="<?php echo $username; ?>">
   	</div>
         <div class="input-group">
-  	  <label>ID number</label>
+  	  <label>ROLL number</label>
   	  <input type="text" name="id" value="<?php echo $id; ?>">
   	</div>
   	<div class="input-group">
   	  <label>Email</label>
   	  <input type="email" name="email" value="<?php echo $email; ?>">
-  	</div>
-        <div class="input-group">
-  	  <label>Course</label>
-  	  <input type="text" name="course" value="<?php echo $course; ?>">
   	</div>
         <div class="input-group">
   	  <label>Section</label>

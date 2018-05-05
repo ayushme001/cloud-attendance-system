@@ -33,7 +33,6 @@ if (isset($_POST['reg_user'])) {
   if (empty($id)) { array_push($errors, "ID is required"); }
   if (empty($name)) { array_push($errors, "Name is required"); }
   if (empty($section)) { array_push($errors, "section is required"); }
-  if (empty($course)) { array_push($errors, "course is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
@@ -55,7 +54,7 @@ if (isset($_POST['reg_user'])) {
     }
      
     if ($user['id'] === $id) {
-      array_push($errors, "ID number already exists");
+      array_push($errors, "Roll number number already exists");
     }
   }
 

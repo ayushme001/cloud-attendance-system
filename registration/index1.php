@@ -173,7 +173,7 @@
          }
          
     echo"<form method='post'  class='input-group' action='index1.php'>";
-    echo"<table class='data-table' width='100%' border='0' cellpadding='0' cellspacing='1' >
+    echo"<table class='data-table' width='100%' border='0' cellpadding='0' cellspacing='1' align='center'>
             <tbody>";
                 
          $c=1;       
