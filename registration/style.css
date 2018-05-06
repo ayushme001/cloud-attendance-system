@@ -11,7 +11,7 @@ body {
   width: 40%;
   margin: 50px auto 0px;
   color: white;
-  background: #5F9EA0;
+  background: #4067AB;
   text-align: center;
   border: 0px solid #B0C4DE;
   border-bottom: none;
@@ -57,7 +57,7 @@ form, .content {
   padding: 10px;
   font-size: 15px;
   color: white;
-  background: #5F9EA0;
+  background: #4067AB;
   border: none;
   border-radius: 5px;
  
@@ -67,7 +67,7 @@ form, .content {
   padding: 20px;
   font-size: 15px;
   color: white;
-  background: #5F9EA0;
+  background: #4067AB;
   border: none;
   border-radius: 5px;
   text-align: left;
@@ -77,7 +77,7 @@ form, .content {
   padding: 10px;
   font-size: 15px;
   color: white;
-  background: #5F9EA0;
+  background: #4067AB;
   border: none;
   border-radius: 5px;
   margin-left:400px;
