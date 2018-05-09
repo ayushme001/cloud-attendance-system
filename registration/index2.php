@@ -119,7 +119,7 @@
     <?php  if (isset($_SESSION['username'])) : 
         $username=$_SESSION['username'];?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index2.php?logout='1'" style="color: red;">logout</a> </p>
+        <p style='margin-top: 20px '> <a href="index2.php?logout='1'" style="color: red;">logout</a> </p>
     	
     <?php endif ?>
         <?php
@@ -153,7 +153,7 @@
                                 <th  class='data-table'>Cloud Computing</th>
                             </tr>
                         
-                        <tbody>
+                       
                  
          
         <?php
@@ -161,10 +161,11 @@
         $db = mysqli_connect('localhost', 'root', '');
         mysqli_select_db($db,'registration'); 
        
-         // Start date
+        // Start date
 	//$date = '2009-12-06';
 	// End date
 	$end_date = date('d/m/Y');
+        //echo"$end_date";
         $date1 = '01/05/2018'; 
         $i=0;
         for($i=1;$i<=$end_date;$i++)

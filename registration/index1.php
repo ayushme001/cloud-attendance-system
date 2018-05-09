@@ -144,17 +144,16 @@
    }
     ?>
       <br/>
-      <tr>
-                <td>
-                    <table width='100%' border='0' cellpadding='0' cellspacing='0' class="data-table">
-                        <tbody>
+      
+                    <table width='100%' border='0' cellpadding='0' cellspacing='1' class="data-table">
+                        
                             <tr>
-                                <td   class='data-table'> Roll no</td>
-                                <td   class='data-table'>Name </td>
-                                <td  class='data-table'><?php echo"$date"; ?></td>
+                                <th   class='data-table'> Roll no</th>
+                                <th   class='data-table'>Name </th>
+                                <th  class='data-table'><?php echo"$date"; ?></th>
                             </tr>
-                        <tbody>
-                    </table>
+                        
+                    
                 </td>
     </tr>	  
 
@@ -173,8 +172,7 @@
          }
          
     echo"<form method='post'  class='input-group' action='index1.php'>";
-    echo"<table class='data-table' width='100%' border='0' cellpadding='0' cellspacing='1' align='center'>
-            <tbody>";
+    
                 
          $c=1;       
         while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) 
@@ -215,10 +213,9 @@
             
              $c++;
         }
-        
-        echo"</tbody>";
+      
      echo"</table>";
-     echo"<button type='submit' class='btn' >Submit</button> ";
+     echo"<button type='submit' style='margin-top: 30px ' class='btn' >Submit</button> ";
      echo"</form>";
 
     ?>
@@ -226,7 +223,7 @@
     
     
     
-<p> <a href="index2.php?logout='1'" style="color: red;">logout</a> </p>
+<p style='margin-top: 20px '> <a href="index2.php?logout='1'" style="color: red;">logout</a> </p>
    
 </div>		
 </body>
