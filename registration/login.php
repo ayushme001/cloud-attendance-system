@@ -101,9 +101,7 @@
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
-  	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
-  	</p>
+  	
         <div class="input-group">
   		<button type="button" class="btn" onclick="window.location.href='index.html'" >Login as student</button>
   	</div>

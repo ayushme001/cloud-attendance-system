@@ -164,9 +164,10 @@
         // Start date
 	//$date = '2009-12-06';
 	// End date
-	$end_date = date('d/m/Y');
-        //echo"$end_date";
-        $date1 = '01/05/2018'; 
+        $date1='01/05/2018';
+         $date='01/05/2018';
+	$end_date = '12/05/2018';
+        //$date1 = date('d/m/Y');  
         $i=0;
         for($i=1;$i<=$end_date;$i++)
 	 {  
@@ -281,8 +282,19 @@
 
                 
                 }
-                $date1=date('d/m/Y',strtotime("+$i days"));
-                
+               // $date1=date('d/m/Y',strtotime("+$i days"));
+               // $j=$i+1;
+               // $date1="0$j/05/2018";
+              // $date= date('d/m/Y',strtotime("+1 day", strtotime("28/02/2018")));
+                //echo" $date1";
+                //$date = date('d/m/Y',strtotime("+1 day",strtotime("28/02/2018"));
+              //  echo date("d/m/Y", $date);
+                //$date1=date('d/m/Y',strtotime("+$i days"));
+                //$date = "04-15-2013";
+                //$date2 = str_replace('-', '/', $date);
+                $date1 = date('m/d/Y',strtotime($date . "+$i months"));
+
+                //echo $date1;
 	}
         
       
